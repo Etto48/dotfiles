@@ -1,0 +1,21 @@
+#!/bin/bash
+
+MAX_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+CURRENT_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
+
+let one_perc=MAX_BRIGHTNESS/100 
+
+getopts i:d:s flag
+case "${flag}" in
+  i) let new_brightness=${OPTARG}*${one_perc}+${CURRENT_BRIGHTNESS};;
+  d) let new_brightness=${CURRENT_BRIGHTNESS}-${OPTARG}*${one_perc};;
+  s) let new_brightness=${OPTARG}*${one_perc};;
+esac
+
+if [[ "${new_brightness}" -gt "${MAX_BRIGHTNESS}" ]]; then
+  let new_brightness=${MAX_BRIGHTNESS}
+elif [[ "${new_brightness}" -lt "1" ]]; then
+  let new_brightness=1
+fi
+
+echo ${new_brightness} > /sys/class/backlight/intel_backlight/brightness

@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ $(ip route list | grep -Po 'default.*dev \K\w') = 'w' ]]; then 
+  echo ""
+elif [[ $(ip route list | grep -Po 'default.*dev \K\w') = 'e' ]]; then 
+  echo ""
+else 
+  echo "" 
+fi
+

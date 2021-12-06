@@ -1,0 +1,16 @@
+MUTED=$(pulseaudio-ctl full-status | awk '{ printf "%s", $2 }')
+LEVEL=$(pulseaudio-ctl full-status | awk '{ printf "%i", $1 }')
+
+if [[ "${MUTED}" = "yes" ]]; then
+  echo " Mute"
+else
+  if [[ "${LEVEL}" -ge "50" ]]; then
+    echo -n ""
+  elif [[ "${LEVEL}" -ge "1" ]]; then
+    echo -n ""
+  else
+    echo -n ""
+  fi
+  echo " ${LEVEL}%"
+fi
+
