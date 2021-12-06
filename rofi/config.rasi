@@ -10,7 +10,7 @@ configuration {
 
 * {
 	text-color: @foreground;
-	active-background: #FFF733;
+	active-background: @background;
 	active-foreground: @foreground;
 	normal-background: @background;
 	normal-foreground: @foreground;
@@ -22,8 +22,8 @@ configuration {
 	alternate-normal-foreground: @foreground;
 	alternate-urgent-background: @background;
 	alternate-urgent-foreground: @foreground;
-	selected-active-background: rgb(255, 255, 50);
-	selected-active-foreground: @foreground;
+	selected-active-background: @selected-normal-background;
+	selected-active-foreground: @selected-normal-foreground;
 	selected-normal-background: #EEE755;
 	selected-normal-foreground: #151503;
 	selected-urgent-background: #9D596B;
@@ -35,13 +35,13 @@ configuration {
 }
 
 window {
-	location: west;
-	anchor: west;
+	location: east;
+	anchor: east;
 	height: 565px;
 	width: 25%;
 	orientation: vertical;
 	children: [mainbox];
-	border: 2px 2px 2px 0px;
+	border: 2px 0px 2px 2px;
 	border-color: @active-background;
 	hide-scrollbar: true;
 }
