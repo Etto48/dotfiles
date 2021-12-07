@@ -137,3 +137,5 @@ element alternate.active {
 	background-color: @active-background;
 	text-color: @active-foreground;
 }
+
+@theme "/home/ettore/.config/rofi/launcher.rasi"

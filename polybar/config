@@ -18,6 +18,8 @@
 
 [global/wm]
 
+[settings]
+format-underline = #ffffff
 
 [colors]
 ;background = #ffdd20
@@ -27,7 +29,13 @@
 trasparent = #00000000
 background = #2a2010
 foreground = #fff0cc
-
+active = #ffd065
+accent-0 = #ff9033
+accent-1 = #ffa033
+accent-2 = #ffb033
+accent-3 = #ffc033
+accent-4 = #ffd033
+accent-5 = #fff033
 
 
 [bar/dummy_top]
@@ -37,37 +45,158 @@ height = 40
 modules-left = 
 modules-center = dummy
 modules-right =
-background = #00000000
-foreground = #00000000
+background = ${colors.trasparent}
+foreground = ${colors.trasparent}
 
 [bar/top]
 font-0 = "Cascadia Mono PL:pixelsize=13;3"
 font-1 = "Font Awesome:pixelsize=13;3"
+
 bottom=false
 background = ${colors.background}
 foreground = ${colors.foreground}
 modules-left = launcher workspaces
 modules-center = time
-modules-right = shutdown
+modules-right = updates backlight volume iface battery powermenu
 padding = 0
-width = 99%
+width = 100%:-20
 height = 30
 fixed-center = true
 override-redirect = true
-offset-x = 0.5%
+offset-x = 10
 offset-y = 10
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/updates]
+type = custom/script
+exec = /home/ettore/.config/i3/scripts/packages
+format =  <label>
+format-padding = 1
+format-foreground = ${colors.background}
+format-background = ${colors.accent-5}
+click-left = termite --exec="yay -Syyu"
+
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true
+format =  <label>
+format-padding = 1
+format-background = ${colors.accent-4}
+format-foreground = ${colors.background}
+label = %percentage%%
+
+[module/volume]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+format-volume-background = ${colors.accent-3}
+format-volume-foreground = ${colors.background}
+label-muted =  Muted
+label-muted-foreground = ${colors.background}
+label-muted-background = ${colors.accent-3}
+label-muted-padding = 1
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+click-right = pavucontrol
+
 
 [module/launcher]
-type=custom/script
-exec = echo 
-click-left = rofi -show drun
-format-padding = 1
+type=custom/text
+content="  "
+click-left = /home/ettore/.config/i3/scripts/launcher.sh
+content-background = ${colors.accent-0}
+content-foreground = ${colors.background}
 
 [module/workspaces]
 type=internal/i3
 pin-workspaces = true
 enable-click = true
+#ws-icon-0 = 1;
+#ws-icon-1 = 2;
+#ws-icon-2 = 3;
+#ws-icon-3 = 10;
+#ws-icon-0 = 1;➀
+#ws-icon-1 = 2;➁
+#ws-icon-2 = 3;➂
+#ws-icon-3 = 4;➃
+#s-icon-4 = 5;➄
+#ws-icon-5 = 6;➅
+#s-icon-6 = 7;➆
+#ws-icon-7 = 8;➇
+#ws-icon-8 = 9;➈
+#ws-icon-9 = 10;➉
+#ws-icon-default = ?
+label-focused = 
+label-focused-padding = 1
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.accent-1}
 
+label-occupied = 
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.background}
+label-occupied-background = ${colors.accent-1}
+
+label-unfocused = 
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.background}
+label-unfocused-background = ${colors.accent-1}
+
+label-urgent = 
+label-urgent-padding = 1
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.accent-1}
+format = <label-state> <label-mode>
+
+[module/iface]
+type=custom/script
+exec=/home/ettore/.config/i3/scripts/iface
+interval=5
+click-left=iwgtk
+format-padding = 1
+format-background = ${colors.accent-2}
+format-foreground = ${colors.background}
+
+[module/battery]
+type=internal/battery
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 1
+format-charging-foreground = ${colors.background}
+format-charging-background = ${colors.accent-1}
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 1
+format-discharging-foreground = ${colors.background}
+format-discharging-background = ${colors.accent-1}
+format-full = <ramp-capacity> <label-full>
+format-full-padding = 1
+format-full-foreground = ${colors.background}
+format-full-background = ${colors.accent-1}
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+
+[module/powermenu]
+type=custom/text
+content = "  "
+click-left = /home/ettore/.config/i3/scripts/powermenu.sh
+content-background = ${colors.accent-0}
+content-foreground = ${colors.background}
 
 [module/time]
 type=internal/date
@@ -78,4 +207,5 @@ format = <label>
 label =  %date%   %time%
 
 [module/dummy]
-type=custom/script
+type=custom/text
+content=" "
