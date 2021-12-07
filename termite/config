@@ -22,7 +22,7 @@ scrollback_lines = 10000
 #hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
+browser = firefox
 
 # "system", "on" or "off"
 #cursor_blink = system
@@ -40,10 +40,10 @@ scrollback_lines = 10000
 #size_hints = false
 
 # "off", "left" or "right"
-#scrollbar = off
+# scrollbar = off
 
 # Whether to prefer using the GTK dark theme variant.
-#gtk_dark_theme = false
+gtk_dark_theme = true
 
 # Enable smart copy. ^C will copy if text has been selected. ^V will paste. It
 # is no longer possible to send a ^V to the running program when this option is
@@ -61,7 +61,7 @@ scrollback_lines = 10000
 #background = #3f3f3f
 
 # 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+# background = rgba(63, 63, 63, 0.95)
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f

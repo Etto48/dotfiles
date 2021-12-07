@@ -37,9 +37,9 @@ options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -selected-row 0)"
 case $chosen in
     $shutdown)
-		systemctl poweroff
+		systemctl poweroff;;
     $reboot)
-		systemctl reboot
+		systemctl reboot;;
     $lock)
 		if [[ -f /usr/bin/i3lock ]]; then
 			i3lock
@@ -50,7 +50,7 @@ case $chosen in
     $suspend)
 		mpc -q pause
 		amixer set Master mute
-		systemctl suspend
+		systemctl suspend;;
     $logout)
 		if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
 			openbox --exit
@@ -58,5 +58,5 @@ case $chosen in
 			bspc quit
 		elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
 			i3-msg exit
-		fi
+		fi;;
 esac

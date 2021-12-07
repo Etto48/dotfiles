@@ -48,7 +48,7 @@ textbox-prompt-colon {
 	background-color: 				@bg1;
 	text-color: 					#FFFFFF;
 	expand: false;
-	str: "直";
+	str: "";
 }
 
 entry {
