@@ -19,7 +19,7 @@
 [global/wm]
 
 [settings]
-format-underline = #ffffff
+
 
 [colors]
 ;background = #ffdd20
@@ -50,14 +50,14 @@ foreground = ${colors.trasparent}
 
 [bar/top]
 font-0 = "Cascadia Mono PL:pixelsize=13;3"
-font-1 = "Font Awesome:pixelsize=13;3"
+font-1 = "FontAwesome:pixelsize=13;3"
 
 bottom=false
 background = ${colors.background}
 foreground = ${colors.foreground}
 modules-left = launcher workspaces
 modules-center = time
-modules-right = updates backlight volume iface battery powermenu
+modules-right = updates updates_trigger backlight volume iface battery powermenu
 padding = 0
 width = 100%:-20
 height = 30
@@ -67,6 +67,7 @@ offset-x = 10
 offset-y = 10
 cursor-click = pointer
 cursor-scroll = ns-resize
+enable-ipc = true
 
 
 [module/launcher]
@@ -109,15 +110,19 @@ label-mode-padding = 1
 format = <label-state><label-mode>
 
 [module/updates]
-type = custom/script
-exec = /home/ettore/.config/i3/scripts/packages
-format =  <label>
+type = custom/ipc
+hook-0 = /home/ettore/.config/i3/scripts/packages
+format = <output>
 format-padding = 1
 format-foreground = ${colors.background}
 format-background = ${colors.accent-5}
-interval = 300
-click-left = termite --exec="yay -Syyu"
+click-left = termite --exec="yay -Syyu" && polybar-msg hook updates 1
 
+[module/updates_trigger]
+type=custom/script
+exec=polybar-msg hook updates 1
+interval=300
+label=
 
 [module/backlight]
 type = internal/backlight

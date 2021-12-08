@@ -1,23 +1,13 @@
 #!/usr/bin/env bash
 
 # Starts a scan of available broadcasting SSIDs
-# nmcli dev wifi rescan
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#nmcli dev wifi rescan
 
 FIELDS=SSID,SECURITY
 POSITION=0
 YOFF=0
 XOFF=0
 FONT="Cascadia Mono PL 14"
-
-if [ -r "$DIR/config" ]; then
-	source "$DIR/config"
-elif [ -r "$HOME/.config/rofi/wifi" ]; then
-	source "$HOME/.config/rofi/wifi"
-else
-	echo "WARNING: config file not found! Using default values."
-fi
 
 LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d')
 # For some reason rofi always approximates character width 2 short... hmmm

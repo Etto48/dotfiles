@@ -242,7 +242,7 @@ bindsym $mod+Tab exec rofi -show window
 #exec_always xrandr --output Virtual-1 --mode 1920x1080 --rate 60
 exec_always --no-startup-id feh --bg-scale /home/ettore/Pictures/wallpaper.png
 exec_always --no-startup-id /home/ettore/.config/polybar/launch.sh
-exec --no-startup-id picom
+exec --no-startup-id picom --experimental-backend
 
 # window colors
 #                       border              background         text                 indicator

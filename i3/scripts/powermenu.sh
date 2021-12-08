@@ -41,12 +41,11 @@ case $chosen in
     $reboot)
 		systemctl reboot;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
+		if [[ -f /usr/bin/betterlockscreen ]]; then
+			betterlockscreen -l 
+		elif [[ -f /usr/bin/i3lock ]]; then
 			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
-		fi
-        ;;
+		fi;;
     $suspend)
 		mpc -q pause
 		amixer set Master mute
