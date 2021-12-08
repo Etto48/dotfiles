@@ -81,6 +81,11 @@ label-occupied-padding = 1
 label-occupied-foreground = ${color.background}
 label-occupied-background = ${color.shade2}
 
+#label-empty = X
+#label-empty-padding = 1
+#label-empty-foreground = ${color.background}
+#label-empty-background = ${color.shade2}
+
 label-unfocused = 
 label-unfocused-padding = 1
 label-unfocused-foreground = ${color.background}
