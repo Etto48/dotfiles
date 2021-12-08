@@ -15,7 +15,7 @@ configuration {
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
+	hide-scrollbar: 				false;
 	sidebar-mode: 					false;
 }
 
@@ -75,6 +75,7 @@ listview {
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
+    scrollbar:                      true;
 }
 
 mainbox {
@@ -98,7 +99,7 @@ element {
 element-icon {
     size:                           24px;
     border:                         0px;
-    background-color: inherit;
+    background-color:               inherit;
 }
 
 element-text {
@@ -106,8 +107,8 @@ element-text {
     horizontal-align:               0;
     vertical-align:                 0.5;
     margin:                         0px 2.5px 0px 2.5px;
-    background-color: inherit;
-    text-color: inherit;
+    background-color:               inherit;
+    text-color:                     inherit;
 }
 
 element selected {
@@ -116,4 +117,13 @@ element selected {
 	border:							0px;
     border-radius:                  0px;
     border-color:                  	@bg;
+}
+
+scrollbar {
+    width:                          4px ;
+    border:                         0;
+    handle-color:                   @bg2;
+    background-color:               @bg;
+    handle-width:                   8px ;
+    padding:                        0;
 }

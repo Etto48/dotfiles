@@ -17,26 +17,14 @@
 ;==========================================================
 
 [global/wm]
+include-file = "/home/ettore/.config/polybar/colors.ini"
+
 
 [settings]
 
 
-[colors]
-;background = #ffdd20
-;active-background = #ffcc20
-;foreground = #775520
-;active-foreground = #664410
+[color]
 trasparent = #00000000
-background = #2a2010
-foreground = #fff0cc
-active = #ffd065
-accent-0 = #ff9033
-accent-1 = #ffa033
-accent-2 = #ffb033
-accent-3 = #ffc033
-accent-4 = #ffd033
-accent-5 = #fff033
-
 
 [bar/dummy_top]
 bottom=false
@@ -45,16 +33,16 @@ height = 40
 modules-left = 
 modules-center = dummy
 modules-right =
-background = ${colors.trasparent}
-foreground = ${colors.trasparent}
+background = ${color.trasparent}
+foreground = ${color.trasparent}
 
 [bar/top]
 font-0 = "Cascadia Mono PL:pixelsize=13;3"
 font-1 = "FontAwesome:pixelsize=13;3"
 
 bottom=false
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${color.background}
+foreground = ${color.foreground}
 modules-left = launcher workspaces
 modules-center = time
 modules-right = updates updates_trigger backlight volume iface battery powermenu
@@ -75,9 +63,9 @@ type=custom/text
 content=""
 content-padding = 1
 click-left = /home/ettore/.config/i3/scripts/launcher.sh
-#click-right = /home/ettore/.config/i3/scripts/change_color.sh
-content-background = ${colors.accent-0}
-content-foreground = ${colors.background}
+click-right = /home/ettore/.config/i3/scripts/settings/color-switch.sh
+content-background = ${color.shade1}
+content-foreground = ${color.background}
 
 [module/workspaces]
 type=internal/i3
@@ -85,26 +73,26 @@ pin-workspaces = true
 enable-click = true
 label-focused = 
 label-focused-padding = 1
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.accent-1}
+label-focused-foreground = ${color.background}
+label-focused-background = ${color.shade2}
 
 label-occupied = 
 label-occupied-padding = 1
-label-occupied-foreground = ${colors.background}
-label-occupied-background = ${colors.accent-1}
+label-occupied-foreground = ${color.background}
+label-occupied-background = ${color.shade2}
 
 label-unfocused = 
 label-unfocused-padding = 1
-label-unfocused-foreground = ${colors.background}
-label-unfocused-background = ${colors.accent-1}
+label-unfocused-foreground = ${color.background}
+label-unfocused-background = ${color.shade2}
 
 label-urgent = 
 label-urgent-padding = 1
-label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.accent-1}
+label-urgent-foreground = ${color.background}
+label-urgent-background = ${color.shade2}
 
-label-mode-background = ${colors.accent-2}
-label-mode-foreground = ${colors.background}
+label-mode-background = ${color.shade3}
+label-mode-foreground = ${color.background}
 label-mode-padding = 1
 
 format = <label-state><label-mode>
@@ -114,8 +102,8 @@ type = custom/ipc
 hook-0 = /home/ettore/.config/i3/scripts/packages
 format = <output>
 format-padding = 1
-format-foreground = ${colors.background}
-format-background = ${colors.accent-5}
+format-foreground = ${color.background}
+format-background = ${color.shade6}
 click-left = termite --exec="yay -Syyu" && polybar-msg hook updates 1
 
 [module/updates_trigger]
@@ -130,8 +118,8 @@ card = intel_backlight
 enable-scroll = true
 format =  <label>
 format-padding = 1
-format-background = ${colors.accent-4}
-format-foreground = ${colors.background}
+format-background = ${color.shade5}
+format-foreground = ${color.background}
 label = %percentage%%
 label-minlen = 4
 
@@ -139,12 +127,12 @@ label-minlen = 4
 type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
-format-volume-background = ${colors.accent-3}
-format-volume-foreground = ${colors.background}
+format-volume-background = ${color.shade4}
+format-volume-foreground = ${color.background}
 label-volume-minlen = 4
 label-muted =  Muted
-label-muted-foreground = ${colors.background}
-label-muted-background = ${colors.accent-3}
+label-muted-foreground = ${color.background}
+label-muted-background = ${color.shade4}
 label-muted-padding = 1
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -157,23 +145,23 @@ exec=/home/ettore/.config/i3/scripts/iface
 interval=5
 click-left=/home/ettore/.config/i3/scripts/wifi_menu.sh
 format-padding = 1
-format-background = ${colors.accent-2}
-format-foreground = ${colors.background}
+format-background = ${color.shade3}
+format-foreground = ${color.background}
 
 [module/battery]
 type=internal/battery
 format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
-format-charging-foreground = ${colors.background}
-format-charging-background = ${colors.accent-1}
+format-charging-foreground = ${color.background}
+format-charging-background = ${color.shade2}
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 1
-format-discharging-foreground = ${colors.background}
-format-discharging-background = ${colors.accent-1}
+format-discharging-foreground = ${color.background}
+format-discharging-background = ${color.shade2}
 format-full = <ramp-capacity> <label-full>
 format-full-padding = 1
-format-full-foreground = ${colors.background}
-format-full-background = ${colors.accent-1}
+format-full-foreground = ${color.background}
+format-full-background = ${color.shade2}
 label-charging-minlen = 4
 label-discharging-minlen = 4
 label-full-minlen = 4
@@ -197,8 +185,8 @@ animation-charging-framerate = 750
 type=custom/text
 content = "  "
 click-left = /home/ettore/.config/i3/scripts/powermenu.sh
-content-background = ${colors.accent-0}
-content-foreground = ${colors.background}
+content-background = ${color.shade1}
+content-foreground = ${color.background}
 
 [module/time]
 type=internal/date
