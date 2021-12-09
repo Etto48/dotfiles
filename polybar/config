@@ -35,6 +35,8 @@ modules-center = dummy
 modules-right =
 background = ${color.trasparent}
 foreground = ${color.trasparent}
+#wm-restack = i3
+
 
 [bar/top]
 font-0 = "Cascadia Mono PL:pixelsize=13;3"
@@ -43,7 +45,7 @@ font-1 = "FontAwesome:pixelsize=13;3"
 bottom=false
 background = ${color.background}
 foreground = ${color.foreground}
-modules-left = launcher workspaces
+modules-left = launcher workspaces title
 modules-center = time
 modules-right = updates updates_trigger backlight volume iface battery powermenu
 padding = 0
@@ -56,12 +58,13 @@ offset-y = 10
 cursor-click = pointer
 cursor-scroll = ns-resize
 enable-ipc = true
+#wm-restack = i3
 
 
 [module/launcher]
 type=custom/text
 content=""
-content-padding = 1
+content-padding = 2
 click-left = /home/ettore/.config/i3/scripts/launcher.sh
 click-right = /home/ettore/.config/i3/scripts/settings/color-switch.sh
 content-background = ${color.shade1}
@@ -96,11 +99,41 @@ label-urgent-padding = 1
 label-urgent-foreground = ${color.background}
 label-urgent-background = ${color.shade2}
 
-label-mode-background = ${color.shade3}
+label-mode-background = ${color.shade2}
 label-mode-foreground = ${color.background}
 label-mode-padding = 1
 
 format = <label-state><label-mode>
+
+[module/title]
+type = internal/xwindow
+; Available tags:
+;   <label> (default)
+format = <label>
+format-background = ${color.shade3}
+format-foreground = ${color.background}
+format-padding = 1
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label =  %title:0:17:...% %{A1:i3-msg kill:}%{A} 
+
+; Used instead of label when there is no window title
+; Available tokens:
+;   None
+label-empty = 
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format =  <label>
+label-minlen = 4
+format-padding = 1
+format-foreground = ${color.background}
+format-background = ${color.shade4}
+
 
 [module/updates]
 type = custom/ipc
@@ -188,7 +221,8 @@ animation-charging-framerate = 750
 
 [module/powermenu]
 type=custom/text
-content = "  "
+content = ""
+content-padding = 2
 click-left = /home/ettore/.config/i3/scripts/powermenu.sh
 content-background = ${color.shade1}
 content-foreground = ${color.background}

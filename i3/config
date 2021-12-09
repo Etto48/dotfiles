@@ -236,6 +236,9 @@ gaps inner 10
 bindsym XF86MonBrightnessUp exec --no-startup-id /home/ettore/.config/i3/scripts/change_backlight -i 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id /home/ettore/.config/i3/scripts/change_backlight -d 10 # decrease screen brightness
 
+#screenshot
+bindsym --release Print exec /home/ettore/.config/i3/scripts/screenshot.sh
+
 #alt tab
 bindsym $mod+Tab exec rofi -show window
 
