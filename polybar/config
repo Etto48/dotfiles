@@ -17,7 +17,7 @@
 ;==========================================================
 
 [global/wm]
-include-file = "/home/ettore/.config/polybar/colors.ini"
+include-file = "~/.config/polybar/colors.ini"
 
 
 [settings]
@@ -45,7 +45,7 @@ font-1 = "FontAwesome:pixelsize=13;3"
 bottom=false
 background = ${color.background}
 foreground = ${color.foreground}
-modules-left = launcher workspaces title
+modules-left = launcher workspaces title settings
 modules-center = time
 modules-right = updates updates_trigger backlight volume iface battery powermenu
 padding = 0
@@ -65,8 +65,7 @@ enable-ipc = true
 type=custom/text
 content=""
 content-padding = 2
-click-left = /home/ettore/.config/i3/scripts/launcher.sh
-click-right = /home/ettore/.config/i3/scripts/settings/color-switch.sh
+click-left = ~/.config/i3/scripts/launcher.sh
 content-background = ${color.shade1}
 content-foreground = ${color.background}
 
@@ -124,6 +123,13 @@ label =  %title:0:17:...% %{A1:i3-msg kill:}%{A}
 ;   None
 label-empty = 
 
+[module/settings]
+type = custom/text
+content = 
+content-padding = 1
+content-background = ${color.shade4}
+content-foreground = ${color.background}
+click-left = ~/.config/i3/scripts/settings/color-switch.sh
 
 [module/cpu]
 type = internal/cpu
@@ -137,7 +143,7 @@ format-background = ${color.shade4}
 
 [module/updates]
 type = custom/ipc
-hook-0 = /home/ettore/.config/i3/scripts/packages
+hook-0 = ~/.config/i3/scripts/packages
 format = <output>
 format-padding = 1
 format-foreground = ${color.background}
@@ -179,9 +185,9 @@ click-right = pavucontrol
 
 [module/iface]
 type=custom/script
-exec=/home/ettore/.config/i3/scripts/iface
+exec=~/.config/i3/scripts/iface
 interval=5
-click-left=/home/ettore/.config/i3/scripts/wifi_menu.sh
+click-left=~/.config/i3/scripts/wifi_menu.sh
 format-padding = 1
 format-background = ${color.shade3}
 format-foreground = ${color.background}
@@ -223,7 +229,7 @@ animation-charging-framerate = 750
 type=custom/text
 content = ""
 content-padding = 2
-click-left = /home/ettore/.config/i3/scripts/powermenu.sh
+click-left = ~/.config/i3/scripts/powermenu.sh
 content-background = ${color.shade1}
 content-foreground = ${color.background}
 

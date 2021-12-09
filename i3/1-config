@@ -1,14 +1,4 @@
 
-		#Colors
-		set $accent-color        #32AF58
-		set $bg-color 	          #1F1F1F
-		set $inactive-bg-color   #1F1F1F
-		set $text-color          #32AF58
-		set $inactive-text-color #018948
-		set $urgent-bg-color     #1F1F1F
-		set $urgent-text-color   #6CD365
-	
-
 include ~/.config/i3/colors
 
 
