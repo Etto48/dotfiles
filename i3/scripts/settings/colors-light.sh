@@ -3,6 +3,7 @@
 # Color files
 PFILE="$HOME/.config/polybar/colors.ini"
 RFILE="$HOME/.config/rofi/colors.rasi"
+IFILE="$HOME/.config/i3/0-config"
 
 # Change colors
 change_color() {

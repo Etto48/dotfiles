@@ -54,3 +54,6 @@ MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
 				*teal-dark) "$SCDIR"/colors-dark.sh --teal ;;
 				*yellow-dark) "$SCDIR"/colors-dark.sh --yellow				
             esac
+
+~/.config/i3/scripts/settings/concat-i3-config.sh
+i3-msg reload

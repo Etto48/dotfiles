@@ -111,10 +111,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -171,12 +171,12 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec "~/.config/i3/scripts/settings/concat-i3-config.sh; i3-msg reload"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r exec "~/.config/i3/scripts/settings/concat-i3-config.sh; i3-msg restart"
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec "~/.config/i3/scripts/powermenu.sh"
+bindsym $mod+Escape exec "~/.config/i3/scripts/powermenu.sh"
 
 # resize window (you can also use the mouse for that)
 
@@ -230,18 +230,18 @@ gaps inner 10
 #smart_gaps on
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id /home/ettore/.config/i3/scripts/change_backlight -i 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id /home/ettore/.config/i3/scripts/change_backlight -d 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/change_backlight -i 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/change_backlight -d 10 # decrease screen brightness
 
 #screenshot
-bindsym --release Print exec /home/ettore/.config/i3/scripts/screenshot.sh
+bindsym --release Print exec ~/.config/i3/scripts/screenshot.sh
 
 #alt tab
 bindsym $mod+Tab exec rofi -show window
 
 #exec_always xrandr --output Virtual-1 --mode 1920x1080 --rate 60
-exec_always --no-startup-id feh --bg-scale /home/ettore/Pictures/wallpaper.png
-exec_always --no-startup-id /home/ettore/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id picom --experimental-backend
 
 # window colors
