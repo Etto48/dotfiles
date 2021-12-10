@@ -1,0 +1,42 @@
+
+#general purpose
+set $mod Mod4
+
+# Font for window titles. 
+font pango:Cascadia Mono PL 13
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+#exec --no-startup-id xss-lock -l betterlockscreen -- -l blur
+
+#gaps
+gaps inner 10
+
+#background
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+#bar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+#compositor
+exec --no-startup-id picom --experimental-backend
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $accent-color       $accent-color      $text-color          $accent-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
+
+for_window [class=".*"] border pixel 2
+
+

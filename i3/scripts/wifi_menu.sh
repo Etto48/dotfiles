@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Starts a scan of available broadcasting SSIDs
-#nmcli dev wifi rescan
+nmcli device wifi rescan
 
 FIELDS=SSID,SECURITY
 POSITION=0

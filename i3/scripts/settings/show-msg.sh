@@ -1,0 +1,1 @@
+rofi -theme "~/.config/rofi/message.rasi" -e "$1"
