@@ -103,7 +103,7 @@ bindsym $mod+Shift+r exec "~/.config/i3/scripts/settings/concat-i3-config.sh; i3
 bindsym $mod+Escape exec "~/.config/i3/scripts/powermenu.sh"
 
 # resize window (you can also use the mouse for that)
-set $resize ""
+set $resize ""
 mode $resize {
         # These bindings trigger as soon as you enter the resize mode
 
