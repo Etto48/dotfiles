@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+SIZE=$(du ~/OneDrive --max-depth=0 -h | cut -f1)
+echo " ${SIZE}"

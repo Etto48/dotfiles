@@ -199,6 +199,9 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #compositor
 exec --no-startup-id picom --experimental-backend
+#onedrive
+exec --no-startup-id ~/.config/i3/scripts/onedrive_sync
+
 
 # window colors
 #                       border              background         text                 indicator

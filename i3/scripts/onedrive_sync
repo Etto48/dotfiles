@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+while [ true ]
+do
+    onedrive
+    sleep 300
+done
