@@ -1,7 +1,8 @@
 #Screen and workspace settings
 
 #screen layout
-exec --no-startup-id ~/.screenlayout/layout.sh
+exec_always
+ --no-startup-id ~/.screenlayout/layout.sh
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

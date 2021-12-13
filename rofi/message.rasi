@@ -15,19 +15,6 @@ window {
     border-radius:          0px;
     border-color:           @bg1;
     location:               center;
-    y-offset:               -2em;
-}
-
-entry {
-    expand: 				true;
-    text-color:				@bg2;
-}
-
-scrollbar {
-    width:                          4px ;
-    border:                         0;
-    handle-color:                   @bg2;
-    background-color:               @bg;
-    handle-width:                   8px ;
-    padding:                        0;
+    //y-offset:               -2em;
+    children:               [message];
 }
