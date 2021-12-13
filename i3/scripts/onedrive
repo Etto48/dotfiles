@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
 SIZE=$(du ~/OneDrive --max-depth=0 -h | cut -f1)
-echo " ${SIZE}"
+ICON=""
+if [ "$1" = "syncing" ]; then
+    ICON=""
+fi
+
+echo "${ICON} ${SIZE}"

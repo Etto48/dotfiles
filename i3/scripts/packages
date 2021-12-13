@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 URGENT_VALUE=25
-PACKAGE_COUNT=$(checkupdates+aur | wc -l)
+PACKAGE_COUNT=$(checkupdates+aur 2>&1 | grep -v ERROR | wc -l)
 
 
 if [[ "${PACKAGE_COUNT}" -gt "0" ]]; then
-  echo " ${PACKAGE_COUNT}"
+    echo " ${PACKAGE_COUNT}"
 fi
