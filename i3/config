@@ -11,7 +11,8 @@
 #Screen and workspace settings
 
 #screen layout
-exec_always --no-startup-id ~/.screenlayout/layout.sh
+#exec_always --no-startup-id ~/.screenlayout/layout.sh
+exec_always --no-startup-id ~/.config/i3/scripts/autoconfigure_monitor.sh
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -193,12 +194,10 @@ exec --no-startup-id dex --autostart --environment i3
 #gaps
 gaps inner 10
 
-#background
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-#bar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 #compositor
-exec --no-startup-id picom --experimental-backend
+exec_always --no-startup-id picom --experimental-backend
+#Notifications
+exec_always --no-startup-id ~/.config/i3/start_dunst
 #onedrive
 exec --no-startup-id ~/.config/i3/scripts/onedrive_sync
 

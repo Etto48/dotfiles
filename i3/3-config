@@ -19,12 +19,10 @@ exec --no-startup-id dex --autostart --environment i3
 #gaps
 gaps inner 10
 
-#background
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-#bar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 #compositor
-exec --no-startup-id picom --experimental-backend
+exec_always --no-startup-id picom --experimental-backend
+#Notifications
+exec_always --no-startup-id ~/.config/i3/start_dunst
 #onedrive
 exec --no-startup-id ~/.config/i3/scripts/onedrive_sync
 

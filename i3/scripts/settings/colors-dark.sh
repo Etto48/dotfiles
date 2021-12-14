@@ -4,6 +4,7 @@
 PFILE="$HOME/.config/polybar/colors.ini"
 RFILE="$HOME/.config/rofi/colors.rasi"
 IFILE="$HOME/.config/i3/0-config"
+DFILE="$HOME/.config/dunst/dunstrc"
 
 # Change colors
 change_color() {
@@ -45,6 +46,10 @@ change_color() {
 		set \$urgent-bg-color     #1F1F1F
 		set \$urgent-text-color   $SH6
 	" > $IFILE
+
+	sed -i -e "s/frame_color = \"#.*\"/frame_color = \"$SH3\"/g" $DFILE
+	sed -i -e 's/background = \"#.*\"/background = \"#1F1F1F\"/g' $DFILE
+	sed -i -e 's/foreground = \"#.*\"/foreground = \"#FFFFFF\"/g' $DFILE
 
 	polybar-msg cmd restart
 }

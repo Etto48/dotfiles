@@ -1,0 +1,41 @@
+#!/bin/bash
+
+HUSHED=$(dunstctl is-paused)
+
+function notif_get()
+{
+    COUNT=$(dunstctl count waiting)
+    
+    if [[ $HUSHED = "false" ]]; then
+        if [[ $COUNT != "0" ]]; then
+            echo " $COUNT"
+        else
+            echo ""
+        fi
+    else 
+        if [[ $COUNT != "0" ]]; then
+            echo " $COUNT"
+        else
+            echo ""
+        fi
+        
+    fi
+}
+
+function notif_menu()
+{
+    dunstctl context
+} 
+
+function notif_hush()
+{
+    dunstctl set-paused toggle
+}
+
+if [[ "$1" = "get" ]]; then
+    notif_get
+elif [[ "$1" = "menu" ]]; then
+    notif_menu
+elif [[ "$1" = "hush" ]]; then
+    notif_hush
+fi
