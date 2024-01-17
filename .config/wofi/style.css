@@ -1,0 +1,67 @@
+@define-color accent-color #b291ff;
+@define-color bg-color #202020;
+@define-color fg-color #ffffff;
+
+*{
+    font-family: monospace;
+    font-size: 16px;
+
+}
+
+window{
+    background-color: @bg-color;
+    border-radius: 10px;
+    border: 2px solid @accent-color;
+}
+
+#input {
+    margin: 5px;
+    padding: 10px 10px 5px 10px;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    border-bottom: 3px solid @accent-color;
+    color: @fg-color;
+    font-size: 20px;
+    background-color: unset;
+}
+
+#input:focus {
+    box-shadow: inset 0 2 0 2px @accent-color;
+}
+
+#entry {
+    border-radius: 10px;
+}
+
+#inner-box {
+}
+
+#outer-box {
+    margin: 10px;
+}
+
+#text {
+    padding: 5px;
+    color: @fg-color;
+}
+
+#entry:selected {
+    background-color: @accent-color;
+    color: @bg-color;
+}
+
+#text:selected {
+    color: @bg-color;
+}
+
+#scroll {
+}
+
+#img {
+    margin: 5px;
+}
+
+/* Give color to even items */
+/* #entry:nth-child(even){ */
+/*     background-color: #404552; */
+/* } */
