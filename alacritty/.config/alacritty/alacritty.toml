@@ -1,0 +1,28 @@
+import = [
+    ".config/alacritty/colors.toml"
+]
+
+[font]
+size = 18.0
+[font.normal]
+family = "UbuntuMono Nerd Font"
+
+[window]
+opacity = 0.96
+[window.dimensions]
+columns = 80
+lines = 24
+
+[selection]
+save_to_clipboard = false
+
+[cursor]
+[cursor.style]
+blinking = "On"
+
+[mouse]
+hide_when_typing = true
+bindings = [
+    { mouse = "Right", action = "Copy" },
+    { mouse = "Right", mods = "Shift", action = "Paste" },
+]
