@@ -14,6 +14,10 @@ plugins=(git)
 # Start Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+# Install Ruby Gems to ~/.local/share/gems
+export GEM_HOME="$HOME/.local/share/gems"
+export PATH="$HOME/.local/share/gems/bin:$PATH"
+
 alias python=python3
 alias ipython=ipython3
 alias pip=pip3

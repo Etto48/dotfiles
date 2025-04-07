@@ -75,5 +75,6 @@
         "terminal.ansiBrightMagenta": "#baacff",
         "terminal.ansiBrightCyan": "#94e2d5",
         "terminal.ansiBrightWhite": "#ffffff",
-    }
+    },
+    "githubPullRequests.pullBranch": "never"
 }
