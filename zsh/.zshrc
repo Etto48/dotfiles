@@ -21,6 +21,7 @@ export PATH="$HOME/.local/share/gems/bin:$PATH"
 alias python=python3
 alias ipython=ipython3
 alias pip=pip3
+alias java8=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # alias for activating virtualenv
 activate() {

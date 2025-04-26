@@ -1,0 +1,24 @@
+# Arctic Glow Theme by Ettore Ricci
+
+palette = 0=#343644
+palette = 1=#f06d59
+palette = 2=#7ac972
+palette = 3=#ffd666
+palette = 4=#5ec4ff
+palette = 5=#7764d8
+palette = 6=#4fc4af
+palette = 7=#c6cad7
+palette = 8=#585b70
+palette = 9=#f38b90
+palette = 10=#a6e3a1
+palette = 11=#f9e2af
+palette = 12=#89cefa
+palette = 13=#baacff
+palette = 14=#94e2d5
+palette = 15=#ffffff
+background = #1f1f1f
+foreground = #cdd6f4
+cursor-color = #cdd6f4
+cursor-text = #1f1f1f
+selection-background = #baacff
+selection-foreground = #1f1f1f
