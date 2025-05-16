@@ -1,5 +1,6 @@
+[general]
 import = [
-    ".config/alacritty/colors.toml"
+    "~/.config/alacritty/colors.toml"
 ]
 
 [font]

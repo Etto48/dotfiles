@@ -3,3 +3,5 @@
 	email = ettore.ricci.coding@gmail.com
 [init]
 	defaultBranch = main
+[credential]
+	helper = store

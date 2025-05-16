@@ -9,7 +9,7 @@
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "git.confirmSync": false,
-    "editor.fontFamily": "'UbuntuMono Nerd Font', 'monospace', monospace",
+    "editor.fontFamily": "'UbuntuMono Nerd Font Mono', 'monospace', monospace",
     "explorer.confirmPasteNative": false,
     "explorer.confirmDragAndDrop": false,
     "jupyter.askForKernelRestart": false,
