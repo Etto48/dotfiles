@@ -16,3 +16,9 @@ git clone https://github.com/Etto48/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 stow *
 ```
+
+- Install gnome-terminal profile:
+
+```bash
+dconf load /org/gnome/terminal/ < ./gnome-terminal/settings.cfg
+```
