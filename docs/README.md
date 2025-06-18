@@ -17,18 +17,8 @@ cd ~/.dotfiles
 stow *
 ```
 
-- Install gnome-terminal profile:
+- Apply GNOME settings:
 
 ```bash
-dconf load /org/gnome/terminal/ < ./gnome/gnome-terminal.cfg
+./gnome/apply-settings.sh
 ```
-
-- Import Open Bar settings from Extensions > Open Bar settings > Settings Admin > Import
-- Select `./gnome/open-bar.cfg`
-
-- Import Dash to Dock settings:
-
-```bash
-dconf load /org/gnome/shell/extensions/dash-to-dock/ < ./gnome/dash-to-dock.cfg
-```
- 
