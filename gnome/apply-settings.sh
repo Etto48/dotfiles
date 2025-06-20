@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 echo "Installing extensions"
 
 tmp_dir=$(mktemp -d)
@@ -39,6 +37,7 @@ install_extension() {
         rm "$extension_file" 
     else
         echo "Failed to download ${extension_fancy_name} from ${extension_url}"
+        return 1
     fi
 }
 
