@@ -34,6 +34,7 @@ install_extension rounded-window-corners fxgn
 install_extension app-hider lynith.dev
 install_extension grand-theft-focus zalckos.github.com
 install_extension blur-my-shell aunetx
+install_extension mediacontrols cliffniff.github.com
 
 echo "Applying gnome terminal settings"
 dconf load /org/gnome/terminal/ < ./gnome/gnome-terminal.cfg
@@ -44,3 +45,4 @@ dconf load /org/gnome/shell/extensions/openbar/ < ./gnome/openbar.cfg
 dconf load /org/gnome/shell/extensions/tiling-assistant/ < ./gnome/tiling-assistant.cfg
 dconf load /org/gnome/shell/extensions/rounded-window-corners-reborn/ < ./gnome/rounded-window-corners-reborn.cfg
 dconf load /org/gnome/shell/extensions/blur-my-shell/ < ./gnome/blur-my-shell.cfg
+dconf load /org/gnome/shell/extensions/mediacontrols/ < ./gnome/mediacontrols.cfg
