@@ -208,4 +208,5 @@
     "terminal.integrated.commandsToSkipShell": [
         "matlab.interrupt"
     ],
+    "go.toolsManagement.autoUpdate": true,
 }
