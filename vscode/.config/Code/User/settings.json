@@ -28,7 +28,7 @@
     },
     "github.copilot.enable": {
         "*": true,
-        "plaintext": false,
+        "plaintext": true,
         "markdown": true,
         "scminput": false
     },
@@ -39,6 +39,7 @@
         "argmin",
         "Breiman",
         "colorbar",
+        "Contiki",
         "denoiser",
         "figsize",
         "frombuffer",
@@ -209,4 +210,17 @@
         "matlab.interrupt"
     ],
     "go.toolsManagement.autoUpdate": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "python.defaultInterpreterPath": "/bin/python3",
+    "makefile.configureOnOpen": true,
+    "remote.autoForwardPortsSource": "hybrid",
+    "arduino.useArduinoCli": true,
+    "idf.hasWalkthroughBeenShown": true,
+    "idf.espIdfPath": "/home/ettore/.local/share/esp/v5.5/esp-idf",
+    "idf.toolsPath": "/home/ettore/.espressif",
+    "idf.gitPath": "git",
+    "idf.pythonInstallPath": "/usr/bin/python3",
+    "files.associations": {
+        "*.env": "env"
+    },
 }
