@@ -12,6 +12,11 @@
   },
   "icon_theme": "Catppuccin Mocha",
   "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    },
+    "default_profile": "write",
     "play_sound_when_agent_done": true
   },
   "inlay_hints": {
