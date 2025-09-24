@@ -38,6 +38,7 @@
         "argmax",
         "argmin",
         "Breiman",
+        "chartjs",
         "colorbar",
         "Contiki",
         "denoiser",
