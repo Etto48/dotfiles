@@ -27,6 +27,12 @@ install_extension() {
     fi
 }
 
+disable_extension() {
+    local extension_id="$1"
+    gnome-extensions disable "${extension_id}"
+    echo "Disabled extension: ${extension_id}"
+}
+
 install_extension openbar@neuromorph
 install_extension rounded-window-corners@fxgn
 install_extension app-hider@lynith.dev
@@ -36,8 +42,15 @@ install_extension mediacontrols@cliffniff.github.com
 install_extension logomenu@aryan_k
 install_extension color-picker@tuberry
 
+disable_extension system-monitor@gnome-shell-extensions.gcampax.github.com
+
 echo "Applying gnome terminal settings"
 dconf load /org/gnome/terminal/ < ./gnome/gnome-terminal.cfg
+
+echo "Applying Ptyxis theme"
+cp ./gnome/arcticglow.palette ~/.local/share/org.gnome.Ptyxis/palettes/arcticglow.palette
+dconf load /org/gnome/Ptyxis/ < ./gnome/ptyxis.cfg
+
 
 echo "Applying gnome extension settings"
 dconf load /org/gnome/shell/extensions/dash-to-dock/ < ./gnome/dash-to-dock.cfg
