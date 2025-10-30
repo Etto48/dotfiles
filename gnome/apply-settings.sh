@@ -48,7 +48,7 @@ echo "Applying gnome terminal settings"
 dconf load /org/gnome/terminal/ < ./gnome/gnome-terminal.cfg
 
 echo "Applying Ptyxis theme"
-cp ./gnome/arcticglow.palette ~/.local/share/org.gnome.Ptyxis/palettes/arcticglow.palette
+cp ./gnome/arcticglow.palette ~/.local/share/org.gnome.Ptyxis/palettes/
 dconf load /org/gnome/Ptyxis/ < ./gnome/ptyxis.cfg
 
 
