@@ -2,6 +2,8 @@
 Name=Arcticglow
 
 [Light]
+TitlebarBackground=#dfe4f7
+TitlebarForeground=#1F1F1F
 Background=#CDD6F4
 Foreground=#1F1F1F
 Cursor=#1F1F1F
@@ -29,6 +31,8 @@ SuperuserForeground=#ffd666
 SuperuserBackground=#CDD6F4
 
 [Dark]
+TitlebarBackground=#181818
+TitlebarForeground=#CDD6F4
 Background=#1F1F1F
 Foreground=#CDD6F4
 Cursor=#CDD6F4
