@@ -225,4 +225,5 @@
         "*.env": "env"
     },
     "workbench.colorTheme": "Catppuccin Mocha",
+    "python.analysis.typeCheckingMode": "basic",
 }
