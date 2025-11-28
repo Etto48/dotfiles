@@ -227,4 +227,5 @@
     "workbench.colorTheme": "Catppuccin Mocha",
     "python.analysis.typeCheckingMode": "basic",
     "tinymist.exportPdf": "onType",
+    "python-envs.terminal.autoActivationType": "shellStartup",
 }
